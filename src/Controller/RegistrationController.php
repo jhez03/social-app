@@ -44,6 +44,8 @@ class RegistrationController extends AbstractController
       );
       //set all roles
       $user->setRoles(['ROLE_USER', 'ROLE_WRITER', 'ROLE_COMMENTER', 'ROLE_EDITOR']);
+      //verify email by defauly
+      $user->setIsVerified(true);
 
       $entityManager->persist($user);
       $entityManager->flush();
